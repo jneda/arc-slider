@@ -10,7 +10,7 @@ export default function ArcSlider({
   const [hovered, setHovered] = useState(false);
 
   const style = {
-    stroke: hovered ? "gold" : "hotpink",
+    stroke: "url(#grad1)",
     strokeWidth: "2rem",
     fill: "none",
   };
@@ -20,6 +20,12 @@ export default function ArcSlider({
   return (
     <>
       <svg height={height} width={width}>
+        <defs>
+          <linearGradient id="grad1">
+            <stop offset="0%" stopColor="aquamarine" />
+            <stop offset="100%" stopColor="firebrick" />
+          </linearGradient>
+        </defs>
         <path
           d={`M${width * 0.9} ${height} A${height * 0.4} ${
             height * 0.4
